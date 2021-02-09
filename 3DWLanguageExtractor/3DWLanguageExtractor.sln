@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DWLanguageExtractor", "3DWLanguageExtractor\3DWLanguageExtractor.csproj", "{D7600199-22A8-4E33-B959-AE229AD9ADFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7600199-22A8-4E33-B959-AE229AD9ADFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7600199-22A8-4E33-B959-AE229AD9ADFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7600199-22A8-4E33-B959-AE229AD9ADFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7600199-22A8-4E33-B959-AE229AD9ADFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90C3F7DE-3633-4D3C-BA61-88F0ED285094}
+	EndGlobalSection
+EndGlobal
