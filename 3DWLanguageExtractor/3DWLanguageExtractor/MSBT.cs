@@ -778,13 +778,14 @@ namespace MsbtEditor
 				IEntry ent = null;
 				if (HasLabels)
 				{
-					sb.AppendLine("Label,String");
+					//sb.AppendLine("Label,String");
 					for (int i = 0; i < TXT2.NumberOfStrings; i++)
 					{
 						ent = LBL1.Labels[i];
 						row.Add(ent.ToString());
-						row.Add("\"" + ent.ToString(FileEncoding).Replace("\"", "\"\"") + "\"");
-						sb.AppendLine(string.Join(",", row.ToArray()));
+						ent = TXT2.Strings[(int)ent.Index];
+						row.Add(ent.ToString(FileEncoding).Remove(ent.ToString(FileEncoding).Length - 1));
+						sb.AppendLine(string.Join("|", row.ToArray()));
 						row.Clear();
 					}
 				}
