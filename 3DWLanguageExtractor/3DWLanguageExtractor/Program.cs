@@ -22,14 +22,11 @@ namespace _3DWLanguageExtractor
             {
                 if (!folderName.EndsWith("Common"))
                 {
-                    var systemMessage = Hack.io.YAZ0.YAZ0.DecompressToMemoryStream(folderName + @"\MessageData\SystemMessage.szs");
-                    byte[] systemMessageBytes = systemMessage.ToArray();
-                    systemMessage.Dispose();
-                    //FileStream file = new FileStream(folderName + ".szs", FileMode.Create, FileAccess.Write);
-                    //systemMessage.WriteTo(file);
-                    var sarcData = SZS.SARC.UnpackRamN(systemMessageBytes);
-                    File.WriteAllBytes(folderName + "StageName.msbt", sarcData.Files["StageName.msbt"]);
-                    //Hack.io.MSBT.MSBT msbt = new Hack.io.MSBT.MSBT();
+                    var sarc = Hack.io.YAZ0.YAZ0.DecompressToMemoryStream(folderName + @"\MessageData\SystemMessage.szs").ToArray();
+                    var msbt = new MsbtEditor.MSBT(new MemoryStream(SZS.SARC.UnpackRamN(sarc).Files["StageName.msbt"]));
+                    Console.WriteLine(msbt.GetHashCode());
+                    msbt.ExportToCSV(folderName + ".csv");
+                    //File.WriteAllBytes(folderName + "StageName.msbt", sarcData.Files["StageName.msbt"]);
                 }
                 
             }

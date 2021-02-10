@@ -1,1 +1,1 @@
-To compile, add Hack.io, Hack.io.YAZ0, and Hack.io.MSBT to /dll
+Credits to [IcySon55](https://github.com/IcySon55) for MSBT code from [3DLandMSBTeditor](https://github.com/IcySon55/3DLandMSBTeditor)
