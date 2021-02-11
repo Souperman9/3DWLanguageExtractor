@@ -26,7 +26,7 @@ namespace _3DWLanguageExtractor
                 string gamePath = Console.ReadLine();
                 try
                 {
-                    langFolders = Directory.GetDirectories((gamePath) + @"\LocalizedData");
+                    langFolders = Directory.GetDirectories(Path.Join(gamePath, "LocalizedData"));
                     correctPath = true;
                 }
                 catch
@@ -43,7 +43,7 @@ namespace _3DWLanguageExtractor
             {
                 if (!folderName.EndsWith("Common"))
                 {
-                    var sarc = Hack.io.YAZ0.YAZ0.DecompressToMemoryStream(folderName + @"\MessageData\SystemMessage.szs").ToArray();
+                    var sarc = Hack.io.YAZ0.YAZ0.DecompressToMemoryStream(Path.Join(folderName, "MessageData", "SystemMessage.szs")).ToArray();
                     var msbt = new MsbtEditor.MSBT(new MemoryStream(SZS.SARC.UnpackRamN(sarc).Files["StageName.msbt"]));
                     Console.WriteLine("Extracting " + i + "/" + (langFolders.Length - 1));
                     msbt.ExportToCSV(folderName + ".txt");
